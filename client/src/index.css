@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #6366f1;
+  /* indigo-500 */
+  --color-primary-dark: #4f46e5;
+  /* indigo-600 */
+  --color-secondary: #ec4899;
+  /* pink-500 */
+  --color-accent: #8b5cf6;
+  /* violet-500 */
+  --color-background: #f3f4f6;
+  /* gray-100 */
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --shadow-card: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.2);
+}
+
+body {
+  @apply bg-gray-50 text-gray-900 font-sans antialiased;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+/* Glassmorphism Utilities */
+.glass {
+  @apply bg-white/70 backdrop-blur-lg border border-white/30 shadow-lg;
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-md border border-white/40 shadow-xl rounded-2xl;
+}
+
+/* Buttons */
+.btn {
+  @apply px-6 py-2.5 rounded-full font-semibold transition-all duration-300 transform active:scale-95 cursor-pointer shadow-md flex items-center justify-center gap-2;
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white hover:shadow-lg hover:shadow-indigo-500/40 hover:-translate-y-0.5 border-none;
+}
+
+.btn-secondary {
+  @apply bg-white text-gray-700 border border-gray-200 hover:bg-gray-50 hover:border-gray-300 hover:text-indigo-600;
+}
+
+/* Inputs */
+.input-field {
+  @apply w-full py-3.5 border border-gray-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-indigo-500/10 focus:border-indigo-500 transition-all duration-300 bg-gray-50/50 focus:bg-white shadow-sm text-gray-700 placeholder-gray-400 font-medium;
+}
+
+/* Card Hover Effects */
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-indigo-500/10;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Responsive Container */
+.container-responsive {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
